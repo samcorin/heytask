@@ -1,13 +1,14 @@
 class BookingsController < ApplicationController
-  def title:string
+  def index
   end
 
-  def user:references
+  def show
   end
 
-  def service:references
+  def new
   end
 
-  def status:string
+  def create
   end
+
 end
