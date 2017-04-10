@@ -8,9 +8,9 @@
 
 
 # Generate new users
-# 10.times do
-#   User.create(email: "#{Faker::Name.first_name}@yahoo.com", password: "123123")
-# end
+10.times do
+  User.create(email: "#{Faker::Name.first_name}@yahoo.com", password: "123123")
+end
 
 # Generate services for each user
 User.all.each do |user|
