@@ -1,5 +1,25 @@
 <h1>Services Show Index:</h1>
 
-<% @services.each do |service| %>
-  <p><%= service.name %></p>
-<% end %>
+
+
+<table class="table">
+  <caption>Optional table caption.</caption>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>user</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @services.each do |service| %>
+          <tr>
+            <th scope="row"><%= service.id %></th>
+            <td><%= service.name %></td>
+            <td><%= service.category %></td>
+            <td><%= service.user.email %></td>
+          </tr>
+        <% end %>
+  </tbody>
+</table>
