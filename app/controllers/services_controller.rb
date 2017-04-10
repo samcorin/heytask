@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+<<<<<<< HEAD
   before_action :set_service, only: [ :show, :destroy ]
 
   def index
