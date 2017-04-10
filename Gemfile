@@ -18,7 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 # Upload Photo
-gem 'figaro'
+gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
 group :development, :test do
