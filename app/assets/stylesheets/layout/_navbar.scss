@@ -12,6 +12,13 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  //   /*transition-property: all;
+  //   transition-duration: 1s;*/
+  position: fixed;
+  transition: top 0.4s ease-in-out;
+  //   font-weight: 200;
+  //   background-attachment: fixed;
+  // display: block;
 }
 
 /* Optional class to fix the navbar on top */
@@ -134,4 +141,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.nav-up {
+    top: -70px;
 }
