@@ -2,3 +2,19 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.category-bar {
+  width: 100vw;
+  height: 70px;
+  background: #E8E8E8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  font-size: 40px;
+  color: #B7B7B7;
+}
+
+.invisible-navbar {
+  background-color: transparent !important;
+}
