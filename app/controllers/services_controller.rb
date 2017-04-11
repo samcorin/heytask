@@ -36,7 +36,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
-  # def service_params
-  #   params.require(:service).permit()
-  # end
+  def service_params
+    params.require(:cocktail).permit(:name, :category, :description, :photo, :photo_cache, :price, :provider_id)
+  end
 end
