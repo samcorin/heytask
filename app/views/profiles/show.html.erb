@@ -1,6 +1,7 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="container show-grey">
+  <h1 class="text-center"><%= @user.first_name %>'s profile</h1>
 
-<%= cl_image_tag @user.profile_photo %>
-<%= @user.first_name %>
-<%= @user.last_name %>
+  <%= cl_image_tag @user.profile_photo %>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+</div>
