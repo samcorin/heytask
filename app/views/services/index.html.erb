@@ -1,49 +1,20 @@
 <div class="service-banner">
   <div class="banner-content">
-    <h1>List of Tasks & Services</h1>
+    <h1>List of Services</h1>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card">
           <div class="card-description">
-          <h2><%= service.name %></h2>
+          <h2><%= link_to service.name, service_path(service), class: 'bs-link' %></h2>
           <p><%= service.category %></p>
         </div>
-          <img class="card-user avatar" src="user.jpg">
-          <a class="card-link" href="#" ></a>
+          <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-
-
-
-
-<table class="table">
-  <caption>Optional table caption.</caption>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>user</th>
-      </tr>
-      </thead>
-      <tbody>
-        <% @services.each do |service| %>
-          <tr>
-            <th scope="row"><%= service.id %></th>
-            <td><%= service.name %></td>
-            <td><%= service.category %></td>
-            <td><%= service.provider.email %></td>
-          </tr>
-        <% end %>
-  </tbody>
-</table>
