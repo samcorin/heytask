@@ -7,6 +7,10 @@ class ServicesController < ApplicationController
     @services = Service.all
     @category = params[:category]
 
+    # dynamic photos
+    @photo_types = {fitness: "sports", cooking: "food", people: "business", design: "fashion", transport: "transport", people: "people", gardening: "animals"}
+    @photo = @photo_types[@category.to_sym] || "business"
+
     if @category
       @services = @services.where(category: @category)
     end
@@ -54,6 +58,6 @@ class ServicesController < ApplicationController
   end
 
   def set_category_list
-    @categories = ['cleaning', 'fitness', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
+    @categories = ['cleaning', 'fitness', 'design', 'technical', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
   end
 end
