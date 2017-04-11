@@ -19,8 +19,33 @@
   background: transparent !important;
 }
 
+.filler {
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .about-heytask {
   width: 100vw;
   height: 600px;
   background: #0582CA;
+  // background: #FAFAFA;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-heytask-photo {
+  width: inherit;
+  height: inherit;
+  background-size: contain;
+}
+
+.temp-card {
+  background: white;
+  min-height: 200px;
+  padding: 10px;
+  margin: auto;
 }
