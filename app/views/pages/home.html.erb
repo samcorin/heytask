@@ -6,11 +6,19 @@
 </div>
 
 <div class="category-bar">
-  <%#= link_to service%>
+  <%= link_to services_path do %>
     <i class="fa fa-home" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to services_path do %>
     <i class="fa fa-calendar" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to services_path do %>
     <i class="fa fa-bath" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to services_path do %>
     <i class="fa fa-pie-chart" aria-hidden="true"></i>
+  <% end %>
+
 </div>
 
 
