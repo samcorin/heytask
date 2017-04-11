@@ -8,6 +8,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @category_list = Service.where("category =?", params[:id])
   end
 
   def new
