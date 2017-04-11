@@ -7,7 +7,7 @@
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card">
           <div class="card-description">
           <h2><%= link_to service.name, service_path(service), class: 'bs-link' %></h2>
           <p><%= service.category %></p>
