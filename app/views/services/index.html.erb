@@ -3,15 +3,13 @@
     <h1>List of Tasks & Services</h1>
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
           <div class="card-description">
-          <h2><%= link_to service.name, service_path(service) %></h2>
+          <h2><%= link_to service.name, service_path(service), class: 'bs-link' %></h2>
           <p><%= service.category %></p>
         </div>
           <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
