@@ -2,10 +2,8 @@
   <h1 class="text-center show-title"><%= @service.name %></h1>
   <div class="row">
     <div class="col-xs-offset-3 col-xs-6 col-sm-4 col-sm-offset-0 ">
-      <img src="<%= cl_image_path @service.provider.profile_photo %>" class="img-circle img-responsive">
-      <!-- <div class="avatar img-responsive">
-        <%= cl_image_tag @service.provider.profile_photo %>
-      </div> -->
+
+
       <div class="show-margin-vertical text-center">
         <%= @service.provider.first_name %>
         <%= @service.provider.last_name %>
@@ -16,6 +14,10 @@
       <div class="show-margin-vertical"><%= @service.description %></div>
       <div class="btn btn-warning show-margin-vertical"><%= @service.category %></div>
       <div class="show-margin-vertical"><%= @service.price %> $/h</div>
+
+        <div>
+          <%= image_tag @service.photo %>
+        </div>
     </div>
   </div>
 </div>
