@@ -1,14 +1,25 @@
 <div class="container show-grey">
-  <h1 class="text-center"><%= @user.first_name %>'s profile</h1>
-  <%= link_to 'Edit profile', '#', class: 'text-center' %>
   <div class="row">
-    <div class="col-xs-offset-3 col-xs-6 block-center">
-      <div><%= cl_image_tag @user.profile_photo, class: 'img-circle img-responsive' %></div>
-      <table class="block-center">
-        <tr>
-          <%= @user.first_name %><%= @user.last_name %>
-        </tr>
-      </table>
+    <div class="col-xs-12">
+      <div class="text-center">
+        <h1><%= @user.first_name %>'s profile</h1>
+      </div>
+      <div class="text-center">
+        <%= link_to 'Edit profile', edit_profile_path %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <div class="text-center">
+        <div><%= cl_image_tag @user.profile_photo, class: 'img-circle img-responsive' %></div>
+        <ul class="list-unstyled">
+          <li><%= @user.first_name %> <%= @user.last_name %></li>
+          <li>Username: <%= @user.username %></li>
+          <li>Username: <%= @user.email %></li>
+          <li>Bio: <%= @user.bio %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
