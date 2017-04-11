@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [ :show, :destroy ]
   before_action :set_user, only: [ :new, :create ]
+  before_action :set_category_list, only: [ :new ]
 
   def index
     @services = Service.all
@@ -45,5 +46,9 @@ class ServicesController < ApplicationController
 
   def service_params
     params.require(:service).permit(:name, :category, :description, :photo, :photo_cache, :price, :provider_id)
+  end
+
+  def set_category_list
+    @categories = ['cleaning', 'fitness', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
   end
 end
