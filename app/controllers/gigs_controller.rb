@@ -1,5 +1,5 @@
 class GigsController < ApplicationController
-  
+
   def index
     @gigs = current_user.gigs
   end
