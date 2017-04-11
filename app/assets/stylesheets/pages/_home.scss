@@ -4,19 +4,22 @@
  * ------------------------------------- */
 
 .category-bar {
-  width: 100vw;
-  height: 70px;
-  background: #E8E8E8;
+  top: -70px;
+  width: auto;
+  // height: 70px;
+  // background: #E8E8E8;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
   font-size: 40px;
-  color: #B7B7B7;
-}
-
-.transparent-navbar {
-  background: transparent !important;
+  position: relative;
+  a {
+    color: #fff;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
 }
 
 .filler {

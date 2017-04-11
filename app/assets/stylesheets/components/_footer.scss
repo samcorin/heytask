@@ -1,84 +1,78 @@
 #myFooter {
-	background-color: #373a48;
-	color:white;
+    position: relative;
+    background-color: #373a48;
+    color: white;
+    bottom: 0;
+    text-align: center;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
 }
 
-#myFooter .footer-copyright{
-	background-color: #383737;
-	padding-top:3px;
-	padding-bottom:3px;
-	text-align: center;
+#myFooter .footer-copyright {
+    background-color: #383737;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
 }
 
-#myFooter .footer-copyright p{
-	margin:10px;
-	color: #fff;
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #fff;
 }
 
-#myFooter ul{
-	list-style-type: none;
+#myFooter ul {
+    list-style-type: none;
     padding-left: 0;
     line-height: 1.7;
 }
 
-#myFooter h5{
-	font-size: 18px;
+#myFooter h5 {
+    font-size: 18px;
     color: white;
     font-weight: bold;
     margin-top: 30px;
 }
 
-#myFooter a{
-	color:#fff;
-	text-decoration: none;
+#myFooter a {
+    color: #fff;
+    text-decoration: none;
+    text-decoration: none;
+    &:focus {
+      color: white;
+    }
+    &:hover {
+      color: white;
+    }
 }
 
-#myFooter a:hover, #myFooter a:focus{
-	text-decoration: none;
-	color:white;
+#myFooter .myCols {
+    text-align: center;
 }
 
-#myFooter .myCols{
-	text-align: center;
+#myFooter .social-networks {
+    text-align: center;
 }
 
-#myFooter .social-networks{
-	text-align: center;
-
-}
-
-#myFooter .social-networks a{
+#myFooter .social-networks a {
     font-size: 32px;
     margin-right: 5px;
     margin-left: 5px;
     color: #f9f9f9;
     padding: 10px;
     transition: 0.2s;
-		margin-top: 5px;
-		margin-bottom: 5px; 
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-#myFooter .social-networks a:hover{
-	text-decoration: none;
+#myFooter .facebook:hover {
+    color: #0077e2;
 }
 
-#myFooter .facebook:hover{
-	color:#0077e2;
+#myFooter .google:hover {
+    color: #ef1a1a;
 }
 
-#myFooter .google:hover{
-	color:#ef1a1a;
+#myFooter .twitter:hover {
+    color: #00aced;
 }
 
-#myFooter .twitter:hover{
-	color: #00aced;
-}
-
-#myFooter {
-		text-align: center;
-	}
-
-#myFooter{
-	flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-}

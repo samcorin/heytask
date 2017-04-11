@@ -6,12 +6,15 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
     @category = params[:category]
+    @search = params[:search]
 
-    # dynamic photos
-    @photo_types = {fitness: "sports", cooking: "food", people: "business", design: "fashion", transport: "transport", people: "people", gardening: "animals"}
-    @photo = @photo_types[@category.to_sym] || "business"
+    if @search
+      @services = @services.where("LOWER(name) LIKE ?", "%#{@search}%")
+    end
 
     if @category
+      @photo_types = {fitness: "sports", cooking: "food", people: "business", design: "fashion", transport: "transport", people: "people", gardening: "animals"}
+      @photo = @photo_types[@category.to_sym] || "business"
       @services = @services.where(category: @category)
     end
   end
