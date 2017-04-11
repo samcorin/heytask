@@ -1,4 +1,4 @@
-.card {
+.index-card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -9,30 +9,30 @@
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/400/200/business');
 }
-.card-user {
+.index-card-user {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.card-category {
+.index-card-category {
   position: absolute;
   top: 10px;
   left: 10px;
   font-size: 10px;
   text-transform: uppercase;
 }
-.card-description {
+.index-card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
+.index-card-description h2 {
   font-size: 24px;
 }
-.card-description p {
+.index-card-description p {
   font-size: 13px;
   }
-.card-link {
+.index-card-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -42,6 +42,6 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover{
+.index-card-link:hover{
   opacity: 0.1;
 }
