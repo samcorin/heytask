@@ -1,6 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="banner-content">
+    <h1>HeyStack</h1>
+    <p>Need a personal trainer? How about somebody who can floss your cat and do the dishes at the same time?</p>
+  </div>
+</div>
 
-<% if user_signed_in? %>
-  Hello, <%= current_user.first_name %>!
-<% end %>
+<div class="category-bar">
+  <i class="fa fa-home" aria-hidden="true"></i>
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  <i class="fa fa-bath" aria-hidden="true"></i>
+  <i class="fa fa-pie-chart" aria-hidden="true"></i>
+
+<!-- <div class="category-links">
+
+</div> -->
+</div>
+
+<div class="container">
+<h1>Pages#home</h1>
+  <% if user_signed_in? %>
+    Hello, <%= current_user.first_name %>!
+  <% end %>
+
+</div>
+
+
