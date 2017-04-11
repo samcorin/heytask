@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+categories = ['cleaning', 'fitness', 'design', 'technical', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
+
 # Booking.destroy_all
 # Service.destroy_all
 puts "Cleaning database..."
@@ -14,7 +16,7 @@ User.destroy_all
 
 # Generate new users
 puts "Creating users..."
-10.times do
+50.times do
   User.create!(email: "#{Faker::Name.first_name}@yahoo.com", password: "123123")
 end
 
@@ -22,10 +24,11 @@ end
 puts "Creating services..."
 User.all.each do |user|
   service = Service.new(
-    name: Faker::Educator.course,
-    category: Faker::Company.profession,
+    name: Faker::Company.bs,
+    category: categories.sample,
     description: Faker::ChuckNorris.fact,
-    price: 42
+    photo: "http://lorempixel.com/400/200/business",
+    price: (5..100).to_a.sample
   )
   service.provider = user
   service.save!

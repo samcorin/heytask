@@ -4,8 +4,9 @@
  * ------------------------------------- */
 
 .category-bar {
+  top: -70px;
   width: auto;
-  height: 70px;
+  // height: 70px;
   // background: #E8E8E8;
   display: flex;
   justify-content: space-around;
@@ -20,13 +21,6 @@
     opacity: 0.5;
   }
 }
-
-// .category-bar {
-//   width: 700px;
-// }
-// .transparent-navbar {
-//   background: transparent !important;
-// }
 
 .filler {
   // background: #0582CA;
