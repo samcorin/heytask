@@ -33,11 +33,9 @@ $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
+.wrapper {
+  margin: 70px;
+  // height: calc(100vh - 70px);
+  // height: calc(100% - 70px);
+  padding: 20px;
 }
