@@ -1,5 +1,6 @@
 <div class="service-banner">
   <div class="banner-content">
+  <!-- http://lorempixel.com/400/200/sports/ -->
     <% if @category %>
       <h1>List of <%= @category %> services</h1>
     <% else %>
@@ -15,7 +16,7 @@
         <% @services.each do |item| %>
           <%= link_to service_path(item) do %>
             <div class="col-xs-12 col-sm-4">
-              <div class="card">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/400/200/<%= @photo %>');">
                 <div class="card-description">
                   <h2 class="bs-link" ><%= item.name %></h2>
                   <p><%= item.category %></p>
@@ -32,7 +33,8 @@
       <% @services.each do |service| %>
         <%= link_to service_path(service) do %>
           <div class="col-xs-12 col-sm-4">
-            <div class="card">
+          <!-- custom photos -->
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/400/200/business');">
               <div class="card-description">
               <h2 class="bs-link" ><%= service.name %></h2>
               <p><%= service.category %></p>
