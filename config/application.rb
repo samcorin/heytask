@@ -17,7 +17,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 
 # slow loading FIX
-config.assets.enabled = false
+# config.assets.enabled = false
 
 module Heytask
   class Application < Rails::Application
