@@ -1,0 +1,14 @@
+<div class="container show-grey">
+  <h1 class="text-center"><%= @user.first_name %>'s profile</h1>
+  <%= link_to 'Edit profile', '#', class: 'text-center' %>
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6 block-center">
+      <div><%= cl_image_tag @user.profile_photo, class: 'img-circle img-responsive' %></div>
+      <table class="block-center">
+        <tr>
+          <%= @user.first_name %><%= @user.last_name %>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
