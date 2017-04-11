@@ -4,11 +4,24 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  # /profile
+  # profilescontroller
+  resource :profile, only: [:show, :edit, :update]
+
   resources :services, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
 
   resources :bookings, only: [:index, :show]
+
+  # gigscontroller
+  resources :gigs, only: [:index, :show ] do
+    membder do
+      patch :accept
+      patch :reject
+    end
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
