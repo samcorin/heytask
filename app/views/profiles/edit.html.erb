@@ -1,2 +1,20 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+
+<div class="container show-grey">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <h1>Edit your profile</h1>
+    </div>
+    <div class="col-xs-6 col-xs-offset-3">
+      <div><%= cl_image_tag @user.profile_photo, class: "img-circle img-responsive" %></div>
+      <%= simple_form_for(@user, url: '/profile' ) do |f| %>
+        <%= f.input :profile_photo %>
+        <%= f.input :profile_photo_cache, as: :hidden %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :username %>
+        <%= f.input :bio %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
