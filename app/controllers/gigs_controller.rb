@@ -1,10 +1,11 @@
-class ServicesController < ApplicationController
+class GigsController < ApplicationController
 
   def index
-    @gigs = Gig.all
+    @gigs = current_user.gigs
   end
 
   def show
+    @gigs = current_user.gigs.find(params[:id])
   end
 
   def accept
@@ -15,9 +16,9 @@ class ServicesController < ApplicationController
 
   private
 
-  def set_service
-    @gig = Service.find(params[:id])
-  end
+  # def set_service
+  #   @gig = Service.find(params[:id])
+  # end
 
   # def dose_params
   #   params.require(:service).permit()
