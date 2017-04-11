@@ -5,6 +5,11 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    @category = params[:category]
+
+    if @category
+      @services = @services.where(category: @category)
+    end
   end
 
   def show
