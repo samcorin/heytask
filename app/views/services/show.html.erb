@@ -1,15 +1,17 @@
-<div class="container">
-  <h1 class="text-center"><%= @service.name %></h1>
+<div class="container show-grey">
+  <h1 class="text-center show_title"><%= @service.name %></h1>
   <div class="row" id="show">
     <div class="col-xs-12 col-md-4">
-      <%= @service.provider.profile_photo %>
-      <%= @service.provider.first_name %>
-      <%= @service.provider.last_name %>
+      <div><%= @service.provider.profile_photo %></div>
+      <div class="text-center">
+        <%= @service.provider.first_name %>
+        <%= @service.provider.last_name %>
+      </div>
     </div>
     <div class="col-xs-12 col-md-8">
-      <%= @service.description %>
-      <%= @service.category %>
-      <%= @service.price %>
+      <div class="show_description"><%= @service.description %></div>
+      <div class="btn btn-warning"><%= @service.category %></div>
+      <div class="text-center"><%= @service.price %></div>
     </div>
   </div>
 </div>
