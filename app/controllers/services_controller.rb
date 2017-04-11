@@ -9,9 +9,16 @@ class ServicesController < ApplicationController
   end
 
   def new
+    @service = Service.new
   end
 
   def create
+    @service = Service.new(service_params)
+    if @service.save
+      redirect_to service_path(@service)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -29,7 +36,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
-  # def dose_params
+  # def service_params
   #   params.require(:service).permit()
   # end
 end
