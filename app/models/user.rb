@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :services, foreign_key: :provider_id, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :gigs, through: :services, as: :bookings
+  has_many :gigs, through: :services, source: :bookings
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
