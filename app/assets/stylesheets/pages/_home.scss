@@ -20,6 +20,7 @@
 }
 
 .filler {
+  // background: #0582CA;
   width: 100vw;
   height: 600px;
   display: flex;
@@ -28,18 +29,22 @@
 }
 
 .about-heytask {
+  // background: white;
+  background: #E8E8E8;
   width: 100vw;
   height: 600px;
-  background: white;
-  // background: #FAFAFA;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  ul li {
+    list-style-type: none;
+  }
+
 }
 
 
 .temp-card {
-  background: #0582CA;
   min-height: 300px;
   padding: 10px;
   margin: auto;
