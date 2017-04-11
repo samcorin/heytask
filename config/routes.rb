@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # gigscontroller
   resources :gigs, only: [:index, :show ] do
-    membder do
+    member do
       patch :accept
       patch :reject
     end
