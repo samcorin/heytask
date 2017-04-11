@@ -18,7 +18,9 @@
     </div>
     <div class="col-xs-offset-3 col-xs-6 col-sm-8 col-sm-offset-0 ">
       <div class="show-margin-vertical"><%= @service.description %></div>
-      <div class="btn btn-warning show-margin-vertical"><%= @service.category %></div>
+      <!-- <div class="btn btn-warning show-margin-vertical"><%= @service.category %></div> -->
+      <div class="btn btn-warning show-margin-vertical"><%= link_to @service.category, category_path(@service.category) %></div>
+
       <div class="show-margin-vertical"><%= @service.price %> $/h</div>
 
       <div>
