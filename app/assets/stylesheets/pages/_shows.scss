@@ -1,14 +1,18 @@
-.grey {
+.show-grey {
   height: 100vh;
-  width: 800px;
+  max-width: 800px;
   background-color: #EEEEEE;
+  padding: 0 3em;
 }
 
-#show {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-#show_title {
+.show-title {
   margin: 30px 0px;
+}
+
+.show-margin {
+  margin: 10px 40px;
+}
+
+.show-margin-vertical {
+  margin: 10px 0px;
 }
