@@ -1,4 +1,4 @@
-.index-card {
+.card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -8,30 +8,30 @@
   position: relative;
   margin-bottom: 20px;
 }
-.index-card-user {
+.card-user {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.index-card-category {
+.card-category {
   position: absolute;
   top: 10px;
   left: 10px;
   font-size: 10px;
   text-transform: uppercase;
 }
-.index-card-description {
+.card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.index-card-description h2 {
+.card-description h2 {
   font-size: 24px;
 }
-.index-card-description p {
+.card-description p {
   font-size: 13px;
   }
-.index-card-link {
+.card-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -41,6 +41,6 @@
   background: black;
   opacity: 0;
 }
-.index-card-link:hover{
+.card-link:hover{
   opacity: 0.1;
 }
