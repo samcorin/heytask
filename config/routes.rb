@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  get 'categories/index'
-
-  get 'categories/show'
+  root to: 'pages#home'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  root to: 'pages#home'
-
-  # /profile
-  # profilescontroller
   resource :profile, only: [:show, :edit, :update]
 
   resources :services, only: [:index, :show, :new, :create] do
@@ -18,7 +12,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show]
 
-  # gigscontroller
   resources :gigs, only: [:index, :show ] do
     member do
       patch :accept
