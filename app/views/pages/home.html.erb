@@ -2,12 +2,30 @@
   <div class="banner-content">
     <h1>HeyTask</h1>
     <p>Need someone to run your errands or send an important letter but you don't have time. Whatever you need, We have hundred of people ready to help you!</p>
-    <form action="/services" method="get" class="navbar-wagon-search">
+
+
+
+
+    <!-- Option 1: autocomplete by type (google places API), more shitty looking -->
+
+    <!-- <form action="/services" method="get" class="navbar-wagon-search">
       <input type="text" name="search" class="navbar-wagon-search-input" placeholder="personal trainer in Meguro">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
+
+    <!-- Option 2: slick lookin, no autocomplete -->
+
+  <form action="/services" method="get" class="input input--makiko">
+    <input class="input__field input__field--makiko" type="text" name="search" id="input-16" autocomplete=”off”>
+    <label class="input__label input__label--makiko" for="input-16">
+      <span class="input__label-content input__label-content--makiko">Search</span>
+    </label>
+    <input type="submit" value="Submit" class="visibility: hidden">
+  </form>
+
+
   </div>
 </div>
 <div class="category-bar">
@@ -45,3 +63,40 @@
   <h3>BOOK</h3>
   </div>
 </section>
+
+
+
+<!--
+        EXPERIMENTAL
+ -->
+
+
+
+<div id="cbp-so-scroller" class="cbp-so-scroller">
+
+  <section class="cbp-so-section">
+    <article class="cbp-so-side cbp-so-side-left">
+      <h2>Lemon drops</h2>
+      <p>Fruitcake toffee jujubes. Topping biscuit sesame snaps jelly caramels jujubes tiramisu fruitcake. Marzipan tart lemon drops chocolate sesame snaps jelly beans.</p>
+    </article>
+    <figure class="cbp-so-side cbp-so-side-right">
+      <img src="http://lorempixel.com/400/400/sports" alt="img01">
+    </figure>
+  </section>
+
+  <section class="cbp-so-section">
+    <figure class="cbp-so-side cbp-so-side-left">
+      <img src="http://lorempixel.com/400/400/sports" alt="img01">
+    </figure>
+    <article class="cbp-so-side cbp-so-side-right">
+      <h2>Plum caramels</h2>
+      <p>Lollipop powder danish sugar plum caramels liquorice sweet cookie. Gummi bears caramels gummi bears candy canes cheesecake sweet roll icing dragée. Gummies jelly-o tart. Cheesecake unerdwear.com candy canes apple pie halvah chocolate tiramisu.</p>
+    </article>
+  </section>
+
+  <section>
+    <!-- ... -->
+  </section>
+  <!-- ... -->
+
+</div>
