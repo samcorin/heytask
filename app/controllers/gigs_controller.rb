@@ -5,7 +5,7 @@ class GigsController < ApplicationController
   end
 
   def show
-    @gigs = current_user.gigs.find(params[:id])
+    @gig = Booking.find(params[:id])
   end
 
   def accept

@@ -1,0 +1,24 @@
+<div class="service-banner" style="margin-bottom: 0">
+  <div class="banner-content">
+    <h1>About <%= @gig.service.name %> for <%= @gig.user.first_name %></h1>
+  </div>
+</div>
+
+
+<div class="container show-grey">
+  <ul class="list-unstyled text-center">
+    <li>
+      <h3>
+        Service: <%= link_to service_path(@gig.service) do %>
+          <%= @gig.service.name %>
+        <% end %>
+      </h3>
+      <h3>User: <%= link_to user_path(@gig.user) do %>
+          <%= @gig.user.first_name %> <%= @gig.user.last_name %>
+        <% end %>
+      </h3>
+      <h3>Plase: <%= @gig.service.address %> (Map below)</h3>
+    </li>
+  </ul>
+</div>
+

@@ -10,6 +10,7 @@
             <h3>
               <%= link_to booking_path(booking) do %>
                 <%= booking.service.name %>: <%= booking.title %>
+                , <%= booking.status %>
               <% end %>
             </h3>
           </li>
