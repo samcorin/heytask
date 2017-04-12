@@ -110,15 +110,15 @@ html, body{
     }
     
     &:nth-child(1){
-      background: url("search.jpeg") center;
+      background: asset-url("search.jpeg") center;
       background-size: cover;
     }
     &:nth-child(2){
-      background: url("choose.jpeg") center;
+      background: asset-url("choose.jpeg") center;
       background-size: cover;
     }
     &:nth-child(3){
-      background: url("book.jpeg") center;
+      background: asset-url("book.jpeg") center;
       background-size: cover;
     }
      h3 {
