@@ -27,7 +27,7 @@ User.all.each do |user|
     name: Faker::Company.bs,
     category: categories.sample,
     description: Faker::ChuckNorris.fact,
-    photo: "http://lorempixel.com/400/200/business",
+    photo: "https://lorempixel.com/400/200/business",
     price: (5..100).to_a.sample
   )
   service.provider = user
