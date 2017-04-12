@@ -1,0 +1,21 @@
+<div class="container show-grey">
+  <div class="row text-center">
+    <h1><%= current_user.first_name %>'s bookings list</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <ul class="list-unstyled">
+        <% @bookings.each do |booking| %>
+          <li>
+            <h3>
+              <%= link_to booking_path(booking) do %>
+                <%= booking.service.name %>: <%= booking.title %>
+              <% end %>
+            </h3>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
