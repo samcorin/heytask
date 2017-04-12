@@ -16,12 +16,18 @@
           <%= link_to service_path(item) do %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/<%= @photo %>');">
-                <div class="card-description">
-                  <h2 class="bs-link" ><%= item.name %></h2>
+                <div class="category">
                   <p><%= item.category %></p>
                 </div>
-                <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
-              </div>
+                <div class="card-info-data">
+                  <div class="card-name left">
+                    <h4><%= item.name %></h4>
+                  </div>
+                  <div class="card-details right">
+                    <p class="card-price">$<%= item.price %></p>
+                  </div>
+                  <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
+                </div>
             </div>
           <% end %>
         <% end %>
@@ -33,11 +39,19 @@
         <%= link_to service_path(service) do %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
-              <div class="card-description">
-              <h2 class="bs-link" ><%= service.name %></h2>
-              <p><%= service.category %></p>
-            </div>
-              <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+                <div class="category">
+                  <p><%= service.category %></p>
+                </div>
+                <div class="card-info-data">
+                  <div class="card-name left">
+                    <h4><%= service.name %></h4>
+                  </div>
+                  <div class="card-details right">
+                    <p class="card-price">$<%= service.price %></p>
+                  </div>
+
+                  <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+                </div>
             </div>
           </div>
         <% end %>
@@ -49,9 +63,12 @@
 
 <div id="map" style="width: 100%; height: 600px;"></div>
 
+
 <% content_for(:after_js) do %>
+
   <script>
     $(document).ready(function() {
+
       var infoWindow;
       infoWindow = new google.maps.InfoWindow;
 
@@ -60,6 +77,8 @@
       handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
 
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        // console.log(markers[0]);
+
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
 
@@ -68,27 +87,77 @@
         } else if (markers.length == 1) {
           handler.getMap().setZoom(14);
         }
-      });
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
+
+
+
+        // ------------ Places -------------
+
+        function initialize() {
+          var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+          console.log("inisde init")
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: pyrmont,
+              zoom: 15
+            });
+
+          var request = {
+            location: pyrmont,
+            radius: '500',
+            query: 'restaurant'
           };
-          console.log(pos)
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
-          infoWindow.open(map);
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
-        });
-      } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-      }
-    });
+          service = new google.maps.places.PlacesService(map);
+          service.textSearch(request, callback);
+        }
+
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              var place = results[i];
+              createMarker(results[i]);
+            }
+          }
+        }
+
+        function createMarkers(places) {
+          var bounds = new google.maps.LatLngBounds();
+          var placesList = document.getElementById('places');
+
+          for (var i = 0, place; place = places[i]; i++) {
+            var image = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            var marker = new google.maps.Marker({
+              map: map,
+              icon: image,
+              title: place.name,
+              position: place.geometry.location
+            });
+
+            placesList.innerHTML += '<li>' + place.name + '</li>';
+
+            bounds.extend(place.geometry.location);
+          }
+        };
+
+        // initialize();
+        console.log("OIK")
+
+
+
+
+
+    });  // ----- Handler END ------
+
+
+
+
+  });
   </script>
 <% end %>

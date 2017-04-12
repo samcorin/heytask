@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :bookings, only: [:index]
+    resources :bookings, only: [:index, :destroy]
   end
 
 
-  resources :bookings, only: [:index, :show]
+  resources :bookings, only: [ :index, :show, :destroy ]
 
   resources :gigs, only: [:index, :show ] do
     member do
