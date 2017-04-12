@@ -30,19 +30,13 @@ class ServicesController < ApplicationController
       @photo_types = {fitness: "sports", cooking: "food", people: "business", design: "fashion", transport: "transport", people: "people", gardening: "animals"}
       @photo = @photo_types[@category.to_sym] || "business"
       @services = @services.where(category: @category)
-<<<<<<< HEAD
 
-=======
->>>>>>> 71f966b52333076652ad9fbdbaa1265097e0de07
       @hash = Gmaps4rails.build_markers(@services) do |service, marker|
         marker.lat service.latitude
         marker.lng service.longitude
         # marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
       end
-<<<<<<< HEAD
 
-=======
->>>>>>> 71f966b52333076652ad9fbdbaa1265097e0de07
     end
 
 
