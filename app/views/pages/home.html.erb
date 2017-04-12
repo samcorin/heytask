@@ -28,15 +28,20 @@
   <% end %>
 </div>
 
-<div class="filler">
-  <div class="container">
-    <div class="text-center">
-      <% if user_signed_in? %>
-
-        <h1>Hello, <%= current_user.first_name %>! Welcome. Come and spend some money with us.</h1>
-      <% else %>
-        <h1>Hello stranger! Welcome. Come and spend some money with us.</h1>
-      <% end %>
-    </div>
+<div class="mini-banner">
+  <div class="mini-banner-content">
+    <h2>Get Things Done, Fast & Easily!</h2>
   </div>
 </div>
+
+<section class="container-flex">
+  <div class="section">
+    <h3>SEARCH</h3>
+  </div>
+  <div class="section">
+  <h3>CHOOSE</h3>
+  </div>
+  <div class="section">
+  <h3>BOOK</h3>
+  </div>
+</section>
