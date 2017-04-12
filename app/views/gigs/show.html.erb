@@ -18,6 +18,12 @@
         <% end %>
       </h3>
       <h3>Plase: <%= @gig.service.address %> (Map below)</h3>
+      <h3>
+        Status: <%= @gig.status %>
+        <%= link_to 'Accept', accept_gig_path(@gig), method: :patch, class: 'btn btn-primary' %>
+         /
+        <%= link_to 'Reject', reject_gig_path(@gig), method: :patch, class: 'btn btn-warning' %>
+      </h3>
     </li>
   </ul>
 </div>

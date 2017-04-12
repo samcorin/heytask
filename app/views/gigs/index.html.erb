@@ -12,6 +12,9 @@
           <%= link_to gig_path(gig) do %>
             <%= gig.service.name %>: <%= gig.user.first_name %> <%= gig.user.last_name %>
           <% end %>
+           <%= gig.status %>
+           <%= link_to 'Accept', accept_gig_path(gig), method: :patch, class: 'btn btn-primary' %>
+           <%= link_to 'Reject', reject_gig_path(gig), method: :patch, class: 'btn btn-warning' %>
         </h3>
       </li>
     <% end %>
