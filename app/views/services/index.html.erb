@@ -62,60 +62,57 @@
 </div>
 
 <div id="map" style="width: 100%; height: 600px;"></div>
+<button id="out">Click here</button>
+
 
 <% content_for(:after_js) do %>
 
   <script>
     $(document).ready(function() {
+      var infoWindow;
+      infoWindow = new google.maps.InfoWindow;
 
-      function initMap() {
-        var infoWindow;
-        infoWindow = new google.maps.InfoWindow;
+      var handler = Gmaps.build('Google');
 
-        var handler = Gmaps.build('Google');
+      handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
 
-        handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
 
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
 
-          if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          } else if (markers.length == 1) {
-            handler.getMap().setZoom(14);
-          }
-        });
 
+
+      // ***************************************************************
+      // Geolocation - own location
+      // ***************************************************************
+
+
+      function findme() {
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            console.log(pos)
+          console.log("yes geo")
+          function success(position) {
+            console.log("success")
+            var latitude  = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            console.log(latitude, longitude)
+          }
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+          function error() {
+            console.log("There was an error.")
+          }
+
+          navigator.geolocation.getCurrentPosition(success, error);
         }
       }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-
+      findme();
     });
+
   </script>
 <% end %>
