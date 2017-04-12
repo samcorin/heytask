@@ -1,7 +1,7 @@
 <div class="navbar-wagon nav-down">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "heytask.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -23,7 +23,8 @@
 
 
     <!-- Index link -->
-    <%= link_to "Index", services_path ,class: "navbar-wagon-item navbar-wagon-link"%>
+    <%= link_to "HOME", root_path ,class: "navbar-wagon-item navbar-wagon-link"%>
+    <%= link_to "SERVICES", services_path ,class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -42,11 +43,6 @@
           <%= image_tag user_avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <%#= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to services_path do %>
-                <i class="fa fa-home"></i> <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to profile_path do %>
                 <i class="fa fa-user"></i>  <%= t(".profile", default: "Profile") %>
@@ -69,7 +65,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "New Service", new_service_path, class: "navbar-wagon-item navbar-wagon-button btn"%>
+    <%= link_to "Add a Service", new_service_path, class: "navbar-wagon-item navbar-wagon-button btn"%>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

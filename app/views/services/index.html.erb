@@ -53,9 +53,12 @@
   <script>
     $(document).ready(function() {
 
+<<<<<<< HEAD
       var infoWindow;
       infoWindow = new google.maps.InfoWindow;
 
+=======
+>>>>>>> 71f966b52333076652ad9fbdbaa1265097e0de07
       var handler = Gmaps.build('Google');
 
       handler.buildMap({ internal: { id: 'map' } }, function() {
@@ -73,6 +76,7 @@
 
 
 
+<<<<<<< HEAD
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           var pos = {
@@ -93,6 +97,8 @@
         handleLocationError(false, infoWindow, map.getCenter());
       }
 
+=======
+>>>>>>> 71f966b52333076652ad9fbdbaa1265097e0de07
     });
   </script>
 <% end %>
