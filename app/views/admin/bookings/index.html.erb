@@ -9,7 +9,8 @@
           <li>
             <h3>
               <%= link_to booking_path(booking) do %>
-                <%= booking.service.name %>: <%= booking.title %>
+                <%= booking.service.name %>: <%= booking.title %> -
+                <%= link_to 'Delete', booking, method: :delete %>
               <% end %>
             </h3>
           </li>
