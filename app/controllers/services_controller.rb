@@ -4,7 +4,15 @@ class ServicesController < ApplicationController
   before_action :set_category_list, only: [ :new ]
 
   def index
-    @services = Service.all
+    # @services = Service.all
+    @services = Service.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@services) do |service, marker|
+      marker.lat service.latitude
+      marker.lng service.longitude
+      # marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
+    end
+
     @category = params[:category]
     @search = params[:search]
 
@@ -17,6 +25,8 @@ class ServicesController < ApplicationController
       @photo = @photo_types[@category.to_sym] || "business"
       @services = @services.where(category: @category)
     end
+
+
   end
 
   def show
@@ -60,7 +70,7 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:name, :category, :description, :photo, :photo_cache, :price, :provider_id)
+    params.require(:service).permit(:name, :address, :category, :description, :photo, :photo_cache, :price, :provider_id)
   end
 
   def set_category_list
