@@ -8,8 +8,8 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-;( function( window ) {
-
+// ( function( window ) {
+$(document).ready(function() {
   'use strict';
 
   var docElem = window.document.documentElement;
@@ -135,5 +135,7 @@
 
   // add to global namespace
   window.cbpScroller = cbpScroller;
+})
 
-} )( window );
+
+// } )( window );
