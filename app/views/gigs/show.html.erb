@@ -17,7 +17,7 @@
           <%= @gig.user.first_name %> <%= @gig.user.last_name %>
         <% end %>
       </h3>
-      <h3>Plase: <%= @gig.service.address %> (Map below)</h3>
+      <h3>Place: <%= @gig.service.address %> (Map below)</h3>
       <h3>
         Status: <%= @gig.status %>
         <%= link_to 'Accept', accept_gig_path(@gig), method: :patch, class: 'btn btn-primary' %>
