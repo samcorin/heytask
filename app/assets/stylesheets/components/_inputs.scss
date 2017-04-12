@@ -1,0 +1,28 @@
+.cool-search-bar {
+
+}
+
+
+.input {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: calc(100% - 2em);
+  vertical-align: top;
+}
+
+
+// input--makiko
+.input--makiko {
+  overflow: hidden;
+  background: #CBCBCB;
+}
+
+// <span class="input input--makiko">
+//   <input class="input__field input__field--makiko" type="text" id="input-16">
+//   <label class="input__label input__label--makiko" for="input-16">
+//     <span class="input__label-content input__label-content--makiko">Search</span>
+//   </label>
+// </span>
