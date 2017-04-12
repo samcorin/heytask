@@ -69,6 +69,7 @@
 
   <script>
     $(document).ready(function() {
+
       var infoWindow;
       infoWindow = new google.maps.InfoWindow;
 
@@ -77,6 +78,8 @@
       handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
 
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        console.log(markers[0]);
+
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
 
@@ -85,10 +88,31 @@
         } else if (markers.length == 1) {
           handler.getMap().setZoom(14);
         }
-      });
-      console.log("OK")
 
+        var service;
+
+        var myLocation = new google.maps.LatLng(35.6471564,139.7097394);
+
+        var request = {
+          location: myLocation,
+          radius: '500',
+          types: ['store']
+        };
+
+          service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, callback);
+        })
+
+        function callback(results, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              var place = results[i];
+              createMarker(results[i]);
+            }
+          }
+        }
+
+        console.log("OK")
     });
-
   </script>
 <% end %>
