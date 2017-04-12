@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_service, only: [:new, :create]
+  before_action :set_service, only: [:new, :create ]
+  # before_action :set_booking, only: [:new, :create, :destroy]
 
   def index
   end
@@ -21,7 +22,14 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @user = @booking.user
+
+    @booking.destroy
+    redirect_to admin_bookings_path
   end
 
   private
@@ -33,4 +41,9 @@ class BookingsController < ApplicationController
   def set_service
     @service = Service.find(params[:service_id])
   end
+
+  # def set_booking
+  #   @booking = Booking.find(params[:id])
+  # end
+
 end
