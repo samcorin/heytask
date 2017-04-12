@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@services) do |service, marker|
       marker.lat service.latitude
       marker.lng service.longitude
-      # marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
+      marker.infowindow render_to_string(partial: "/shared/infowindow", locals: { service: service })
     end
 
     @category = params[:category]
@@ -18,12 +18,25 @@ class ServicesController < ApplicationController
 
     if @search
       @services = @services.where("LOWER(name) LIKE ?", "%#{@search}%")
+
+      @hash = Gmaps4rails.build_markers(@services) do |service, marker|
+        marker.lat service.latitude
+        marker.lng service.longitude
+        # marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
+      end
     end
 
     if @category
       @photo_types = {fitness: "sports", cooking: "food", people: "business", design: "fashion", transport: "transport", people: "people", gardening: "animals"}
       @photo = @photo_types[@category.to_sym] || "business"
       @services = @services.where(category: @category)
+
+      @hash = Gmaps4rails.build_markers(@services) do |service, marker|
+        marker.lat service.latitude
+        marker.lng service.longitude
+        # marker.infowindow render_to_string(partial: "/services/map_box", locals: { service: service })
+      end
+
     end
 
 
