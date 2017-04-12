@@ -1,0 +1,10 @@
+<div class="container show-grey">
+  <div class="row show-margin-vertical">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@service, @booking] do |f| %>
+        <%= f.input :title, placeholder: 'Type your preferred date' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
