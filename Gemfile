@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
+gem "geocoder"
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -18,6 +19,13 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 # Upload Photo
 gem 'cloudinary'
