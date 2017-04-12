@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.service = @service
     @booking.status = "Pending"
     if @booking.save
-      redirect_to bookings_path
+      redirect_to admin_bookings_path
     else
       render :new
     end

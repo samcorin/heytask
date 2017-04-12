@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  namespace :admin do
+    resources :bookings, only: [:index]
+  end
+
+
   resources :bookings, only: [:index, :show]
 
   resources :gigs, only: [:index, :show ] do
