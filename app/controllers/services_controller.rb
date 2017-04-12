@@ -20,6 +20,9 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
+    @alert_message = "You are viewing #{@service.name}"
+    @service_coordinates = { lat: @service.latitude, lng: @service.longitude }
   end
 
   def new
