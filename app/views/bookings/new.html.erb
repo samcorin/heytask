@@ -8,8 +8,14 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for [@service, @booking] do |f| %>
         <%= f.input :title, placeholder: 'Type your preferred date' %>
-        <%= f.submit %>
+        <%= f.input :start_time, as: :string, input_html: { data: { provide: :datepicker } } %>
+        <%= f.submit 'Create booking', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
+
+<!-- for simple_form_for with datepicker
+https://bootstrap-datepicker.readthedocs.io/en/latest/#
+https://github.com/plataformatec/simple_form#wrapping-rails-form-helpers
+http://stackoverflow.com/questions/7787800/rails-3-1-simple-form-submit-style-css -->
