@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:show, :index]
   before_action :set_service, only: [ :show, :destroy ]
   before_action :set_user, only: [ :new, :create ]
   before_action :set_category_list, only: [ :new ]
