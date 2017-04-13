@@ -11,6 +11,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem "geocoder"
 
+# Mailing
+gem "letter_opener", group: :development
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'

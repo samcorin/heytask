@@ -8,8 +8,9 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-// ( function( window ) {
-$(document).ready(function() {
+
+setTimeout((function(window) {
+// $(document).ready(function() {
   'use strict';
 
   var docElem = window.document.documentElement;
@@ -17,6 +18,7 @@ $(document).ready(function() {
   function getViewportH() {
     var client = docElem['clientHeight'],
       inner = window['innerHeight'];
+      console.log(inner)
 
     if( client < inner )
       return inner;
@@ -135,7 +137,13 @@ $(document).ready(function() {
 
   // add to global namespace
   window.cbpScroller = cbpScroller;
-})
+
+// })
+
+// setTimeout(function() {
+//   return window.cbpScroller();
+// },1000);
 
 
-// } )( window );
+
+})(window), 1000);
