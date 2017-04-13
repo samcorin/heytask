@@ -1,17 +1,7 @@
-<!-- <div class="service-banner">
-  <div class="banner-content">
-    <% if @category %>
-      <h1>List of <%= @category %> services</h1>
-    <% else %>
-      <h1>List of Services</h1>
-    <% end %>
-  </div>
-</div> -->
-
-
 <main class="main">
   <div class="main-content">
     <div class="container-fluid">
+      <!-- <div class="site__wrapper"> -->
         <% if @category %>
           <div class="row">
             <% @services.each do |item| %>
@@ -36,35 +26,36 @@
             <% end %>
           </div>
         <% else %>
+
           <div class="row">
           <% @services.each do |service| %>
+            <div class="col-xs-12 col-sm-6">
+              <%= link_to service_path(service) do %>
+                  <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
 
-              <div class="col-xs-12 col-sm-6">
-            <%= link_to service_path(service) do %>
-                <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
-                    <div class="category">
-                      <p><%= service.category %></p>
-                    </div>
-                    <div class="card-info-data">
-                      <div class="card-name left">
-                        <h4><%= service.name.capitalize %></h4>
+
+                      <div class="category">
+                        <p><%= service.category %></p>
                       </div>
-                      <div class="card-details right">
-                        <p class="card-price">$<%= service.price %></p>
+                      <div class="card-info-data">
+                        <div class="card-name left">
+                          <h4><%= service.name.capitalize %></h4>
+                        </div>
+                        <div class="card-details right">
+                          <p class="card-price">$<%= service.price %></p>
+                        </div>
+
+                        <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
                       </div>
-
-                      <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+                      <div class="hidden-address" style="visibility: hidden;"><%= service.address %></div>
                     </div>
-                  </div>
-
-              <% end %>
+                <% end %>
               </div>
 
             <% end %>
             </div>
           <% end %>
-    </div>
-
+      </div>
   </div>
 
   <div id="map">
@@ -77,6 +68,16 @@
   <% content_for(:after_js) do %>
     <script>
       $(document).ready(function() {
+
+
+        // $('.card.item').mouseenter(function() {
+        //   console.log($(this).find(".hidden-address")[0].innerHTML);
+        // })
+
+
+
+
+
 
 
 
