@@ -7,67 +7,96 @@
     <% end %>
   </div>
 </div>
-<div class="container">
-  <div class="row">
 
-    <% if @category %>
-      <div class="container">
-        <% @services.each do |item| %>
-          <%= link_to service_path(item) do %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/<%= @photo %>');">
-                <div class="category">
-                  <p><%= item.category %></p>
-                </div>
-                <div class="card-info-data">
-                  <div class="card-name left">
-                    <h4><%= item.name %></h4>
-                  </div>
-                  <div class="card-details right">
-                    <p class="card-price">$<%= item.price %></p>
-                  </div>
-                  <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
-                </div>
-            </div>
-          <% end %>
-        <% end %>
+<main class="main">
+
+  <div class="main-content">
+
+    <!-- INSERT CARDS HERE -->
+
+      <div class="flex-grid">
+        <div class="col">This little piggy went to market.</div>
+        <div class="col">This little piggy stayed home.</div>
+        <div class="col">This little piggy had roast beef.</div>
       </div>
 
-    <% else %>
+      <!-- <div class="flex-grid-thirds">
+        <div class="col">This little piggy went to market.</div>
+        <div class="col">This little piggy stayed home.</div>
+        <div class="col">This little piggy had roast beef.</div>
+      </div> -->
 
-      <% @services.each do |service| %>
-        <%= link_to service_path(service) do %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
-                <div class="category">
-                  <p><%= service.category %></p>
-                </div>
-                <div class="card-info-data">
-                  <div class="card-name left">
-                    <h4><%= service.name %></h4>
-                  </div>
-                  <div class="card-details right">
-                    <p class="card-price">$<%= service.price %></p>
-                  </div>
 
-                  <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+
+
+
+    <!-- <div class="items">
+      <% if @category %>
+          <% @services.each do |item| %>
+            <%= link_to service_path(item) do %>
+
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/<%= @photo %>');">
+                  <div class="category">
+                    <p><%= item.category %></p>
+                  </div>
+                  <div class="card-info-data">
+                    <div class="card-name left">
+                      <h4><%= item.name %></h4>
+                    </div>
+                    <div class="card-details right">
+                      <p class="card-price">$<%= item.price %></p>
+                    </div>
+                    <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
+                  </div>
                 </div>
-            </div>
-          </div>
+
+              <% end %>
+            <% end %>
+
+      <% else %>
+
+        <% @services.each do |service| %>
+          <%= link_to service_path(service) do %>
+
+              <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
+                  <div class="category">
+                    <p><%= service.category %></p>
+                  </div>
+                  <div class="card-info-data">
+                    <div class="card-name left">
+                      <h4><%= service.name %></h4>
+                    </div>
+                    <div class="card-details right">
+                      <p class="card-price">$<%= service.price %></p>
+                    </div>
+
+                    <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+                  </div>
+                </div>
+
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div> -->
 
-    <% end %>
+
   </div>
-</div>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+  <div id="map">
 
+    <!-- MAP -->
+
+  </div>
+</main>
 
 <% content_for(:after_js) do %>
 
   <script>
     $(document).ready(function() {
+
+
+
+      // --------------- Map ----------------
 
       var infoWindow;
       infoWindow = new google.maps.InfoWindow;
@@ -91,11 +120,10 @@
 
 
 
-        // ------------ Places -------------
+        // ------------ Places API -------------
 
         function initialize() {
           var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-          console.log("inisde init")
           map = new google.maps.Map(document.getElementById('map'), {
               center: pyrmont,
               zoom: 15
@@ -147,17 +175,9 @@
         };
 
         // initialize();
-        console.log("OIK")
 
-
-
-
-
-    });  // ----- Handler END ------
-
-
-
-
+    }); // ----- Handler END ------
   });
+
   </script>
 <% end %>
