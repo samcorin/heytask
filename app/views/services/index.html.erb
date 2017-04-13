@@ -1,4 +1,4 @@
-<div class="service-banner">
+<!-- <div class="service-banner">
   <div class="banner-content">
     <% if @category %>
       <h1>List of <%= @category %> services</h1>
@@ -6,7 +6,9 @@
       <h1>List of Services</h1>
     <% end %>
   </div>
-</div>
+</div> -->
+
+
 
 
 
@@ -77,67 +79,67 @@
 
   <div class="main-content">
 
+    <div class="container-fluid">
     <!-- INSERT CARDS HERE -->
+      <!-- <div class="flex-box">
 
-      <!-- <div class="flex-grid">
-        <div class="col">This little piggy went to market.</div>
-        <div class="col">This little piggy stayed home.</div>
-        <div class="col">This little piggy had roast beef.</div>
       </div> -->
-
-
-
-
-
-
-    <div class="items">
-      <% if @category %>
-          <% @services.each do |item| %>
-            <%= link_to service_path(item) do %>
-
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/<%= @photo %>');">
-                  <div class="category">
-                    <p><%= item.category %></p>
-                  </div>
-                  <div class="card-info-data">
-                    <div class="card-name left">
-                      <h4><%= item.name %></h4>
-                    </div>
-                    <div class="card-details right">
-                      <p class="card-price">$<%= item.price %></p>
-                    </div>
-                    <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
-                  </div>
+      <!-- <div class="items"> -->
+        <% if @category %>
+          <div class="row">
+            <% @services.each do |item| %>
+                <div class="col-xs-12 col-sm-6">
+                  <%= link_to service_path(item) do %>
+                      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/<%= @photo %>');">
+                        <div class="category">
+                          <p><%= item.category %></p>
+                        </div>
+                        <div class="card-info-data">
+                          <div class="card-name left">
+                            <h4><%= item.name %></h4>
+                          </div>
+                          <div class="card-details right">
+                            <p class="card-price">$<%= item.price %></p>
+                          </div>
+                          <%= cl_image_tag item.provider.profile_photo, class: 'card-user avatar' %>
+                        </div>
+                      </div>
+                  <% end %>
                 </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="row">
+          <% @services.each do |service| %>
+
+              <div class="col-xs-12 col-sm-6">
+            <%= link_to service_path(service) do %>
+                <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
+                    <div class="category">
+                      <p><%= service.category %></p>
+                    </div>
+                    <div class="card-info-data">
+                      <div class="card-name left">
+                        <h4><%= service.name %></h4>
+                      </div>
+                      <div class="card-details right">
+                        <p class="card-price">$<%= service.price %></p>
+                      </div>
+
+                      <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
+                    </div>
+                  </div>
 
               <% end %>
-            <% end %>
-
-      <% else %>
-
-        <% @services.each do |service| %>
-          <%= link_to service_path(service) do %>
-
-              <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
-                  <div class="category">
-                    <p><%= service.category %></p>
-                  </div>
-                  <div class="card-info-data">
-                    <div class="card-name left">
-                      <h4><%= service.name %></h4>
-                    </div>
-                    <div class="card-details right">
-                      <p class="card-price">$<%= service.price %></p>
-                    </div>
-
-                    <%= cl_image_tag service.provider.profile_photo, class: 'card-user avatar' %>
-                  </div>
-                </div>
+              </div>
 
             <% end %>
+            </div>
           <% end %>
-        <% end %>
-      </div>
+        <!-- </div> -->
+
+    </div>
+
 
 
   </div>
