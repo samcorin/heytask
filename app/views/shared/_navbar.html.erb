@@ -34,11 +34,10 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% if current_user.facebook_picture_url %>
-            <%= image_tag user_avatar_url(current_user), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag "default-profile.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <% else %>
-              <%= image_tag "default-profile.png", class: "avatar" %>
-            <% end %>
-          <%#= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+              <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to profile_path do %>
@@ -62,6 +61,7 @@
             </li>
           </ul>
         </div>
+
       </div>
 
     <% else %>
