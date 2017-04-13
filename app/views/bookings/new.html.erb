@@ -8,7 +8,12 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for [@service, @booking] do |f| %>
         <%= f.input :title, placeholder: 'Type your preferred date' %>
-        <%= f.input :start_time, as: :string, input_html: { data: { provide: :datepicker } } %>
+        <%#= f.input :start_time, as: :string, input_html: { data: { provide: :datepicker } } %>
+        <%= f.input :start_time, as: :string, input_html: {
+          'data-provide' => 'datepicker',
+          'data-date-format' => 'yyyy/mm/dd'
+          } %>
+        <%= f.input :start_time, as: :time %>
         <%= f.submit 'Create booking', class: 'btn btn-primary' %>
       <% end %>
     </div>
