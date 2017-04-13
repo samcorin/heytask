@@ -5,6 +5,49 @@
 </div>
 
 
+	<!-- Start Content Block 1-2 -->
+	<section id="content-1-2" class="content-block content-1-2">
+		<div class="container">
+			<!-- Start Row -->
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="editContent">
+						<h2><%= @service.name %> - <%= @service.price %> $/h</h2>
+					</div>
+					<div class="editContent">
+						<p class="lead"><%= @service.description %></p>
+					</div>
+					<div class="editContent">
+						<p>Service provided by <%= @service.provider.first_name %> <%= @service.provider.last_name %><br/ >
+            Category: <%= link_to @service.category, services_path(category: @service.category) %>
+            </p>
+					</div>
+					<div class="row">
+						<div class="col-sm-5 col-xs-12">
+							<a href="#" class="btn btn-block btn-primary"><span class="fa fa-cloud-upload"></span> Book Now!</a>
+						</div>
+						<div class="col-sm-5 col-xs-12">
+							<a href="#" class="btn btn-block btn-warning"><span class="fa fa-check"></span> Go Back To Service</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-5 col-sm-offset-1">
+          <%= image_tag @service.photo, height: 400, width: 600, crop: :fill, class: 'img-rounded img-responsive' %>
+				</div>
+			</div>
+			<!--// END Row -->
+		</div>
+	</section>
+    <!--// END Content Block 1-2 -->
+
+
+
+
+
+
+
+
 
 
 
