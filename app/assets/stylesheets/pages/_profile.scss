@@ -1,16 +1,8 @@
-li {
-  size: 30px;
-  padding: 5px 0px;
-}
-
-.img-responsive {
-  margin: 0 auto;
-}
-
 .avatar-show-img {
   width: 128px;
   height: 128px;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .well.profile-block {
@@ -21,11 +13,10 @@ li {
 }
 
 .well.profile-description {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #21D19F;
+  border-color: #45B69C;
 }
 
-.well.profile-contact-info {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+.profile {
+  padding-top: 30px;
 }
