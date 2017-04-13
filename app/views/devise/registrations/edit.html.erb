@@ -1,3 +1,9 @@
+<div class="service-banner">
+  <div class="banner-content">
+    <h1>Service Details</h1>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 ">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -27,5 +33,19 @@
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
     <%= link_to "Back", :back %>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Create Your Profile</h1>
+      <p class="text-center">Be a part of the DevMatch community and fill out your profile!</p>
+      <div class="well">
+        <%= render 'form' %>
+      </div>
+    </div>
   </div>
 </div>
