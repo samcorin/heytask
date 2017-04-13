@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: [:new, :create ]
-  # before_action :set_booking, only: [:new, :create, :destroy]
+  before_action :set_booking, only: [:show, :destroy]
 
   def index
   end
@@ -35,15 +35,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:title, :status)
+    params.require(:booking).permit(:title, :status, :start_time, :end_time)
   end
 
   def set_service
     @service = Service.find(params[:service_id])
   end
 
-  # def set_booking
-  #   @booking = Booking.find(params[:id])
-  # end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
 end
