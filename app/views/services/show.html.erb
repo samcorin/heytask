@@ -5,6 +5,14 @@
 </div>
 
 
+
+  <div class="signup-or-separator">
+    <span class="h6 signup-or-separator--text">or</span>
+     <hr>
+  </div>
+
+
+
 	<!-- Start Content Block 1-2 -->
 	<section id="content-1-2" class="content-block content-1-2">
 		<div class="container">
@@ -29,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-sm-5 col-sm-offset-1">
           <%= image_tag @service.photo, height: 400, width: 600, crop: :fill, class: 'img-rounded img-responsive' %>
 				</div>
@@ -43,7 +51,6 @@
 
 
 <% content_for(:after_js) do %>
-
   <script>
     $(document).ready(function() {
 
@@ -53,9 +60,7 @@
       var handler = Gmaps.build('Google');
 
       handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
-
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        // console.log(markers[0]);
 
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
@@ -65,7 +70,7 @@
         } else if (markers.length == 1) {
           handler.getMap().setZoom(14);
         }
-
+      });  // ----- Handler END ------
 
 
 
@@ -127,11 +132,6 @@
         // initialize();
         console.log("OIK")
 
-
-
-
-
-    });  // ----- Handler END ------
 
 
 

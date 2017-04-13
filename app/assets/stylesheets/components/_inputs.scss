@@ -1,3 +1,32 @@
+// ---------- Airbnb style separator --------
+.signup-or-separator {
+  background: none;
+  height: 34px;
+  position: relative;
+  text-align: center;
+}
+
+.signup-or-separator {
+  background: none;
+  height: 34px;
+  position: relative;
+  text-align: center;
+}
+
+.signup-or-separator--text {
+  background-color: #fff;
+  display: inline-block;
+  padding: 8px;
+}
+
+.signup-or-separator hr {
+  margin: -16px auto 10px;
+  width: 100%;
+}
+
+
+
+
 
 .input {
   position: relative;
