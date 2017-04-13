@@ -135,13 +135,12 @@ html, body{
 
 
 .cbp-so-scroller {
-  margin-top: 50px;
+  margin-top: 3em;
   overflow: hidden;
 }
 
 .cbp-so-section {
   margin-bottom: 15em;
-  position: relative;
 }
 
 /* Clear floats of children */
@@ -175,6 +174,9 @@ html, body{
   padding: 3em 4%;
   overflow: hidden;
   min-height: 12em;
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  -moz-transition: -moz-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 /* Clear floats of children */
@@ -207,9 +209,6 @@ html, body{
 /* Initial state (hidden or anything else) */
 .cbp-so-init .cbp-so-side {
   opacity: 0;
-  -webkit-transition: none;
-  -moz-transition: none;
-  transition: none;
 }
 
 .cbp-so-init .cbp-so-side-left {
@@ -228,9 +227,6 @@ html, body{
 /* add you final states (transition) or your effects (animations) for each side */
 .cbp-so-section.cbp-so-animate .cbp-so-side-left,
 .cbp-so-section.cbp-so-animate .cbp-so-side-right {
-  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-  -moz-transition: -moz-transform 0.5s, opacity 0.5s;
-  transition: transform 0.5s, opacity 0.5s;
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
   transform: translateX(0px);
@@ -271,3 +267,4 @@ html, body{
     max-width: 100%;
   }
 }
+

@@ -8,8 +8,9 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-// ( function( window ) {
-$(document).ready(function() {
+
+( function( window ) {
+
   'use strict';
 
   var docElem = window.document.documentElement;
@@ -123,7 +124,7 @@ $(document).ready(function() {
           classie.add( el, 'cbp-so-animate' );
         }
         else {
-          // this add class init if it doesn´t have it. This will ensure that the items initially in the viewport will also animate on scroll
+          // this add class init if it doesn't have it. This will ensure that the items initially in the viewport will also animate on scroll
           classie.add( el, 'cbp-so-init' );
 
           classie.remove( el, 'cbp-so-animate' );
@@ -135,7 +136,5 @@ $(document).ready(function() {
 
   // add to global namespace
   window.cbpScroller = cbpScroller;
-})
 
-
-// } )( window );
+} )( window );
