@@ -1,25 +1,43 @@
-<div class="container show-grey">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="text-center">
-        <h1><%= @user.first_name %>'s profile</h1>
-      </div>
-      <div class="text-center">
-        <%= link_to 'Edit profile', edit_profile_path %>
-      </div>
+<div class="row">
+  <div class="service-banner">
+    <div class="banner-content">
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-offset-3 col-xs-6">
-      <div class="text-center">
-        <div><%= cl_image_tag @user.profile_photo, class: 'img-circle img-responsive' %></div>
-        <ul class="list-unstyled">
-          <li><%= @user.first_name %> <%= @user.last_name %></li>
-          <li>Username: <%= @user.username %></li>
-          <li>Username: <%= @user.email %></li>
-          <li>Bio: <%= @user.bio %></li>
-        </ul>
-      </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-3 col-md-offset-1">
+    <div class="text-center">
+      <div><%= cl_image_tag @user.profile_photo, class: 'img-circle img-responsive', style: 'margin-bottom: 10px' %></div>
+      <ul class="list-unstyled">
+        <%= link_to 'Edit profile', edit_profile_path, class: 'btn btn-primary' %>
+        <h4><li>Username: <%= @user.username %></li></h4>
+        <h4><li>Email address: <%= @user.email %></li></h4>
+        <p><li>Bio: <%= @user.bio %></li></p>
+      </ul>
     </div>
+  </div>
+  <div class="col-xs-12 col-md-7">
+    <h2 class="text-center" style="margin-top: 0">Sevices</h2>
+
+    <% @user.services.each do |service| %>
+      <%= link_to service_path(service) do %>
+        <div class="col-xs-12 col-md-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path service.photo %>');">
+            <div class="category">
+              <p><%= service.category %></p>
+            </div>
+            <div class="card-info-data">
+              <div class="card-name left">
+                <h4><%= service.name %></h4>
+              </div>
+              <div class="card-details right">
+                <p class="card-price">$<%= service.price %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
