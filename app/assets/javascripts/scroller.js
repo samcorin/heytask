@@ -9,8 +9,8 @@
  * http://www.codrops.com
  */
 
-setTimeout((function(window) {
-// $(document).ready(function() {
+( function( window ) {
+
   'use strict';
 
   var docElem = window.document.documentElement;
@@ -18,7 +18,6 @@ setTimeout((function(window) {
   function getViewportH() {
     var client = docElem['clientHeight'],
       inner = window['innerHeight'];
-      console.log(inner)
 
     if( client < inner )
       return inner;
@@ -125,7 +124,7 @@ setTimeout((function(window) {
           classie.add( el, 'cbp-so-animate' );
         }
         else {
-          // this add class init if it doesn´t have it. This will ensure that the items initially in the viewport will also animate on scroll
+          // this add class init if it doesn't have it. This will ensure that the items initially in the viewport will also animate on scroll
           classie.add( el, 'cbp-so-init' );
 
           classie.remove( el, 'cbp-so-animate' );
@@ -138,12 +137,4 @@ setTimeout((function(window) {
   // add to global namespace
   window.cbpScroller = cbpScroller;
 
-// })
-
-// setTimeout(function() {
-//   return window.cbpScroller();
-// },1000);
-
-
-
-})(window), 1000);
+} )( window );

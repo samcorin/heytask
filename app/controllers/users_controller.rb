@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   #   if @user.save
   #     UserMailer.creation_confirmation(@user).deliver_now
-  #     redirect_to user_path(@restaurant)
+  #     redirect_to user_path(@user)
   #   else
   #     render :new
   #   end
