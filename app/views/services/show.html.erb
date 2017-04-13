@@ -21,7 +21,7 @@
 					<div class="editContent">
 						<p>Service provided by <%= @service.provider.first_name %> <%= @service.provider.last_name %><br/ >
             Address: <%= @service.address %><br />
-            Category: <%= link_to @service.category, services_path(category: @service.category) %>
+            <%= link_to @service.category, services_path(category: @service.category), class: 'btn btn-medium' %>
             </p>
 					</div>
 					<div class="row">
