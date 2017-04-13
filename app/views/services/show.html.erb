@@ -12,10 +12,11 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="editContent">
-						<h2><%= @service.name %> - <%= @service.price %> $/h</h2>
+						<h2><%= @service.name %></h2> 
+            <h3><%= @service.price %> $/h</h3>
 					</div>
 					<div class="editContent">
-						<p class="lead"><%= @service.description %></p>
+						<p class="lead">"<%= @service.description %>"</p>
 					</div>
 					<div class="editContent">
 						<p>Service provided by <%= @service.provider.first_name %> <%= @service.provider.last_name %><br/ >
