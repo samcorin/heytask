@@ -25,6 +25,16 @@ class ServicesController < ApplicationController
       @hash = set_hash(@services)
     end
 
+    if @hash.empty?
+      @hash.push({
+        lat: 35.63396,
+        lng: 139.70829
+      })
+    end
+
+    def action
+      @lat_lng = cookies[:lat_lng].split("|")
+    end
 
   end
 

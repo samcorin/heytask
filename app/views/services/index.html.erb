@@ -2,8 +2,7 @@
   <div class="main-content">
     <div class="container-fluid">
 
-      <% if @services %>
-
+      <% if !@services.empty? %>
         <% if @category %>
           <div class="row">
             <% @services.each do |item| %>
@@ -55,17 +54,31 @@
                       </div>
                       <div class="hidden-address" style="visibility: hidden;"><%= service.address %></div>
                     </div>
-                <% end %>
-              </div>
-
-            <% end %>
+                  <% end %>
+                </div>
+             <% end %>
             </div>
           <% end %>
 
-
         <% else %>
+          <div class="row">
+            <h1 style="text-align:center;">
 
-          <h1>Nothig to show</h1>
+              Nothig to show
+              <% unless @lat_lng %>
+                <script>
+                  setTimeout(function() {
+                    getGeoLocation();
+                  }, 1000)
+                </script>
+              <% end %>
+                <script>
+                  setTimeout(function() {
+                    getGeoLocation();
+                  }, 1000)
+                </script>
+            </h1>
+          </div>
 
           <% end %>
       </div>
@@ -104,6 +117,13 @@
         handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
 
           markers = handler.addMarkers(<%= raw @hash.to_json %>);
+
+          // var currentLocation = [{:lat=>35.63396, :lng=>139.70829}];
+
+          // markers.createMarker({Lat: Gmaps.map.userLocation.lat(),
+          //   Lng: Gmaps.map.userLocation.lng(),
+          //   rich_marker: null
+          //  })
           // console.log(markers[0]);
 
           handler.bounds.extendWith(markers);
