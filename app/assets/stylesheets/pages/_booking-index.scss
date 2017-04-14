@@ -1,0 +1,13 @@
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
