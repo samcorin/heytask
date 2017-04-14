@@ -1,7 +1,10 @@
+
+
 <main class="main">
   <div class="main-content">
     <div class="container-fluid">
-      <!-- <div class="site__wrapper"> -->
+
+      <% if !@services.empty? %>
         <% if @category %>
           <div class="row">
             <% @services.each do |item| %>
@@ -53,11 +56,27 @@
                       </div>
                       <div class="hidden-address" style="visibility: hidden;"><%= service.address %></div>
                     </div>
-                <% end %>
-              </div>
-
-            <% end %>
+                  <% end %>
+                </div>
+             <% end %>
             </div>
+          <% end %>
+
+        <% else %>
+          <div class="row">
+            <h1 style="text-align:center;">
+
+              Nothig to show
+              <%# unless @lat_lng %>
+                <!-- <script>
+                  setTimeout(function() {
+                    getGeoLocation();
+                  }, 500)
+                </script> -->
+              <%# end %>
+            </h1>
+          </div>
+
           <% end %>
       </div>
   </div>
@@ -91,10 +110,19 @@
         infoWindow = new google.maps.InfoWindow;
 
         var handler = Gmaps.build('Google');
+        var user_loc = getGeoLocation();
 
         handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
 
           markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          // markers = handler.addMarkers(document.cookie[0],document.cookie[1]);
+          // console.log(markers)
+          // console.log(document.cookie)
+
+          // markers.createMarker({Lat: Gmaps.map.userLocation.lat(),
+          //   Lng: Gmaps.map.userLocation.lng(),
+          //   rich_marker: null
+          //  })
           // console.log(markers[0]);
 
           handler.bounds.extendWith(markers);

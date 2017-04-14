@@ -18,9 +18,13 @@
 						<p class="lead">"<%= @service.description %>"</p>
 					</div>
 					<div class="editContent">
-						<p>Service provided by <%= @service.provider.first_name %> <%= @service.provider.last_name %><br/ >
-            Address: <%= @service.address %><br />
-            <%= link_to @service.category, services_path(category: @service.category), class: 'btn btn-medium' %>
+						<p>
+              Service provided by
+              <%= link_to user_path(@service.provider) do %>
+                <%= @service.provider.first_name %> <%= @service.provider.last_name %>
+              <% end %><br/ >
+              Address: <%= @service.address %><br />
+              <%= link_to @service.category, services_path(category: @service.category), class: 'btn btn-medium' %>
             </p>
 					</div>
 					<div class="row">
