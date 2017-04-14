@@ -7,20 +7,38 @@
   <div class="row show-margin-vertical">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for [@service, @booking] do |f| %>
-        <%= f.input :title, placeholder: 'Type your preferred date' %>
-        <%#= f.input :start_time, as: :string, input_html: { data: { provide: :datepicker } } %>
-        <%= f.input :start_time, as: :string, input_html: {
-          'data-provide' => 'datepicker',
-          'data-date-format' => 'yyyy/mm/dd'
-          } %>
-        <%= f.input :start_time, as: :time %>
+        <%= f.input :start_time, as: :string, input_html: { id: 'datetimepicker1' } %>
+        <%= f.input :end_time, as: :string, input_html: { id: 'datetimepicker2' } %>
+        <%= f.input :title, label: 'Comment', placeholder: 'If you have a comment' %>
         <%= f.submit 'Create booking', class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
 
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker();
+    });
+  <% end %>
+<% end %>
+
+
 <!-- for simple_form_for with datepicker
 https://bootstrap-datepicker.readthedocs.io/en/latest/#
 https://github.com/plataformatec/simple_form#wrapping-rails-form-helpers
 http://stackoverflow.com/questions/7787800/rails-3-1-simple-form-submit-style-css -->
+
+<!-- <%#= f.input :start_time, as: :string, input_html: {
+  'data-provide' => 'datepicker',
+  'data-date-format' => 'yyyy/mm/dd'
+  } %>
+
+<div class="form-group string optional booking_start_time">
+  <label class="control-label string optional" for="booking_start_time">Start time</label>
+  <input class="form-control string optional" data-provide="datepicker" data-date-format="yyyy/mm/dd" type="text" name="booking[start_time]" id="booking_start_time">
+</div>
+ -->
