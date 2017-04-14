@@ -17,7 +17,7 @@ User.destroy_all
 # Generate new users
 puts "Creating users..."
 30.times do
-  User.create!(email: "#{Faker::Name.first_name}@yahoo.com", password: "123123")
+  User.create!(email: "#{Faker::Name.first_name}@yahoo.com", password: "123123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 end
 
 # Generate services for each user

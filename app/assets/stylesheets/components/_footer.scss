@@ -1,8 +1,15 @@
+html {
+  height: 100%;
+}
 #footer {
   background-color: #222;
   color: #aaaaaa;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
+  // bottom: calc(100% - 62px);
+  bottom: 0;
+  width: 100%;
 }
 
 #footer a {
