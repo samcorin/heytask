@@ -21,3 +21,35 @@
   </ul>
 </div>
 
+
+
+<div class="container">
+  <div class="row">
+    <div class="well">
+      <table class="table table-borderless table-condensed table-hover">
+      <thead class="thead-default">
+        <tr>
+          <th>Services To Provide</th>
+          <th>User</th>
+          <th>Status</th>
+          <th>Accept</th>
+          <th>Reject</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @gigs.each do |gig| %>
+        <tr>
+          <%= link_to gig_path(gig) do %>
+          <td><%= gig.service.name %></td>
+          <td><%= gig.user.first_name %> <%= gig.user.last_name %></td>
+          <% end %>
+          <td><%= gig.status %></td>
+          <td><%= link_to 'Accept', accept_gig_path(gig), method: :patch, class: 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to 'Reject', reject_gig_path(gig), method: :patch, class: 'btn btn-danger btn-sm' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
