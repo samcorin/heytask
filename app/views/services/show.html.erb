@@ -35,7 +35,8 @@
 				</div>
 
 				<div class="col-sm-5 col-sm-offset-1">
-          <%= image_tag @service.photo, height: 400, width: 600, crop: :fill, class: 'img-rounded img-responsive' %>
+          <img src="<%= picture_url(@service) %>" alt="">
+          <%#= image_tag @service.photo, height: 400, width: 600, crop: :fill, class: 'img-rounded img-responsive' %>
 				</div>
 			</div>
 			<!--// END Row -->
