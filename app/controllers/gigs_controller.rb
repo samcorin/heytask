@@ -3,7 +3,6 @@ class GigsController < ApplicationController
 
   def index
     @gigs = current_user.gigs
-    raise
   end
 
   def show
