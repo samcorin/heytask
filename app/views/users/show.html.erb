@@ -20,7 +20,7 @@
     <div class="col-md-3 text-center">
       <%= image_tag @user.profile_photo, class: 'avatar-show-img' %><br />
     </div>
-    
+
     <div class="col-md-6">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <div class="well profile-block profile-description">
@@ -40,7 +40,7 @@
 <% @user.services.each do |service| %>
       <%= link_to service_path(service) do %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path service.photo %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= picture_url(service) %>');">
             <div class="category">
               <p><%= service.category %></p>
             </div>
