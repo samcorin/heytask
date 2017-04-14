@@ -1,3 +1,11 @@
+<% content_for(:title) do %>
+  <%= @user.first_name + " " + @user.last_name + " is on HeyTask" %>
+<% end %>
+
+<% content_for(:description) do %>
+  <%= @user.first_name + " " + @user.last_name + " is on HeyTask" %>
+<% end %>
+
 <div class="row">
   <div class="service-banner">
     <div class="banner-content">
