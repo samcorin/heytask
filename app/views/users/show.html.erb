@@ -51,30 +51,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-  <div class="col-xs-12 col-md-7">
-    <h2 class="text-center">Sevices</h2>
-
-    <% @user.services.each do |service| %>
-      <%= link_to service_path(service) do %>
-        <div class="col-xs-12 col-md-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path service.photo %>');">
-            <div class="category">
-              <p><%= service.category %></p>
-            </div>
-            <div class="card-info-data">
-              <div class="card-name left">
-                <h4><%= service.name %></h4>
-              </div>
-              <div class="card-details right">
-                <p class="card-price">$<%= service.price %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
