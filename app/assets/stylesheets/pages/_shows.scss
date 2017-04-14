@@ -1,21 +1,4 @@
-.show-grey {
-  min-height: 100vh;
-  max-width: 800px;
-  background-color: #EEEEEE;
-  padding: 0 3em;
-}
 
-.show-title {
-  margin: 30px 0px;
-}
-
-.show-margin {
-  margin: 10px 40px;
-}
-
-.show-margin-vertical {
-  margin: 10px 0px;
-}
 
 #map {
   display: flex;
@@ -26,8 +9,10 @@
 #content-1-2 {
   padding-top: 50px;
   padding-bottom: 50px;
+  body: 800px;
 }
 
 #price {
 	border-bottom: 3px solid #0496FF;
 }
+
