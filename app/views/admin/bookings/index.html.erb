@@ -20,7 +20,7 @@
           <% @bookings.each do |booking| %>
         <tr>
           <td>
-          <%= link_to booking_path(booking) do %>
+          <%= link_to service_path(booking.service) do %>
           <%= booking.service.name %>
           </td>
           <td><%= booking.status %></td>
