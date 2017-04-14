@@ -3,7 +3,9 @@ module ServicesHelper
     if service.photo.url
       return service.photo
     else
-      return 'https://lorempixel.com/400/200/business'
+      # WE SHOULD REMOVE THAT AT SOME POINT
+      counter = rand(100)
+      return "https://unsplash.it/400/300?image=#{counter}"
     end
   end
 end

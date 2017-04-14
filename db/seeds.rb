@@ -77,6 +77,8 @@ addresses = [
 'IKEBUKURO , TOSHIMA, TOKYO'
 ]
 
+
+
 Booking.destroy_all
 Service.destroy_all
 puts "Cleaning database..."
@@ -90,19 +92,22 @@ end
 
 # Generate services for each user
 puts "Creating services..."
+counter = 0
 User.all.each do |user|
-  base_cat = categories.sample
-
-  service = Service.new(
-    name: base_cat,
-    category: base_cat,
-    description: Faker::ChuckNorris.fact,
-    photo: "https://lorempixel.com/400/200/business",
-    address: addresses.sample.titleize,
-    price: (12..46).to_a.sample
-  )
-  service.provider = user
-  service.save!
+  (1..6).to_a.sample.times do
+    counter += 1
+    base_cat = categories.sample
+    service = Service.new(
+      name: base_cat,
+      category: base_cat,
+      description: Faker::Lorem.paragraph(2),
+      photo: "https://unsplash.it/200/300?image=#{counter}",
+      address: addresses.sample.titleize,
+      price: (12..46).to_a.sample
+    )
+    service.provider = user
+    service.save!
+  end
 end
 
 # Create 1 fresh user account
