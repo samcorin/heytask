@@ -11,7 +11,6 @@
   <div class="row">
     <div class="col-md-3 text-center">
       <%= image_tag @user.profile_photo, class: 'avatar-show-img' %><br />
-      <%= link_to 'Edit profile', edit_profile_path, class: 'btn btn-primary' %>
     </div>
     
     <div class="col-md-6">
@@ -25,10 +24,10 @@
 </div>
 
 
-
+<div class="wrapper services-show">
 <div class="container">
   <div class="row">
-    <h2 class="text-center">Sevices</h2>
+    <h2 class="text-center service-title">Sevices Provided</h2>
 
 <% @user.services.each do |service| %>
       <%= link_to service_path(service) do %>
@@ -50,4 +49,5 @@
       <% end %>
     <% end %>
   </div>
+</div>
 </div>
