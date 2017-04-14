@@ -1,7 +1,9 @@
 <main class="main">
   <div class="main-content">
     <div class="container-fluid">
-      <!-- <div class="site__wrapper"> -->
+
+      <% if @services %>
+
         <% if @category %>
           <div class="row">
             <% @services.each do |item| %>
@@ -58,6 +60,13 @@
 
             <% end %>
             </div>
+          <% end %>
+
+
+        <% else %>
+
+          <h1>Nothig to show</h1>
+
           <% end %>
       </div>
   </div>
