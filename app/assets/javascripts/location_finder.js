@@ -3,9 +3,12 @@ function getGeoLocation() {
 }
 
 function setGeoCookie(position) {
-  var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
-  document.cookie = "lat_lng=" + escape(cookie_val);
-  console.log("lat_lng=" + escape(cookie_val));
+  // var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+  // var cookie_val = {lat: position.coords.latitude, lng: position.coords.longitude};
+  // console.log("lat_lng=" + escape(cookie_val));
+  // console.log(cookie_val.split("|"));
+  // console.log(cookie_val)
+  document.cookie = [position.coords.latitude, position.coords.longitude];
 }
 
 // function findme() {

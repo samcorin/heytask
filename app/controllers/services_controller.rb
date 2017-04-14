@@ -26,12 +26,12 @@ class ServicesController < ApplicationController
     end
 
     #   hide when geocoder works
-    if @hash.empty?
-      @hash.push({
-        lat: 35.63396,
-        lng: 139.70829
-      })
-    end
+    # if @hash.empty?
+    #   @hash.push({
+    #     lat: 35.63396,
+    #     lng: 139.70829
+    #   })
+    # end
 
     def action
       @lat_lng = cookies[:lat_lng].split("|")
