@@ -33,13 +33,14 @@ $orange: #E67E22;
 $green: #32B796;
 $gray: #000000;
 $white: #ffffff;
+$dark-text: rbga(0,0,0,0.5);
 
 
 // Floats
 .right {
   float: right;
 }
-.right {
+.left {
   float: left;
 }
 
