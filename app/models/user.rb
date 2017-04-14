@@ -11,6 +11,11 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :gigs, through: :services, source: :bookings
 
+  # Geocoding
+  geocoded_by :ip_address,
+    :latitude => :lat, :longitude => :lon
+  after_validation :geocode
+
 
 
   def self.find_for_facebook_oauth(auth)
