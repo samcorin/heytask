@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://lorempixel.com/1200/400/business');
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://lorempixel.com/1200/800/business');
   // margin-bottom: 60px;
 }
 
@@ -17,4 +17,26 @@
   font-size: 40px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-banner {
+  height: calc(100vh - 70px);
+  overflow: hidden;
+
+  color: white;
+  text-align: center;
+  // height: 100%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://lorempixel.com/1200/400/business');
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
 }
