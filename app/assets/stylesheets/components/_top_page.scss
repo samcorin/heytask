@@ -23,8 +23,7 @@
 .login-banner {
   height: calc(100vh - 70px);
   overflow: hidden;
-
-  color: white;
+  color: #fff;
   text-align: center;
   // height: 100%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -39,4 +38,8 @@
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
+}
+
+.login-banner .well {
+  color: rgba(0,0,0,0.8);
 }
