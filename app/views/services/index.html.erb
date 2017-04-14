@@ -45,6 +45,8 @@
                       <div class="card-info-data">
                         <div class="card-name left">
                           <h4><%= service.name.capitalize %></h4>
+                          <!-- <p class="card-provider-name"><%#= service.provider.first_name %> <%#= service.provider.last_name %></p> -->
+                          <p class="card-provider-details"><%= service.address %></p>
                         </div>
                         <div class="card-details right">
                           <p class="card-price">$<%= service.price %></p>
