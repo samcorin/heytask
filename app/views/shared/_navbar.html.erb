@@ -16,7 +16,12 @@
 
 
     <!-- Index link -->
-    <%= link_to "HOME", root_path ,class: "navbar-wagon-item navbar-wagon-link"%>
+    <form action="/services" method="get" class="navbar-wagon-search">
+      <input type="text" name="search" class="navbar-wagon-search-input navbar-wagon-nav-search-input" placeholder="Dog walker">
+      <button type="submit" class=" navbar-wagon-search-bar-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
     <%= link_to "SERVICES", services_path ,class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Different navigation if login or not -->
@@ -87,9 +92,6 @@
             <% end %>
           </li>
           <li>
-            <%= link_to services_path do %>
-              <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-            <% end %>
           </li>
           <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
@@ -97,9 +99,9 @@
           <% end %>
           </li>
         <% else %>
-          <li><a href="#">Some mobile link</a></li>
-          <li><a href="#">Other one</a></li>
-          <li><a href="#">Other one</a></li>
+          <li>
+            <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
         <% end %>
       </ul>
     </div>

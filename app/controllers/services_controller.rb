@@ -97,6 +97,56 @@ class ServicesController < ApplicationController
   end
 
   def set_category_list
-    @categories = ['cleaning', 'fitness', 'design', 'technical', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
+    # @categories = ['cleaning', 'fitness', 'design', 'technical', 'making some sort of fort', 'excellence', 'justified violence', 'cooking', 'gardening' ]
+    @categories = [ 'Delivery',
+      'Cleaning',
+      'Event Planning',
+      'Event Staffing',
+      'Personal Assistant',
+      'Entertainment',
+      'Furniture Assembly',
+      'Heavy Lifting',
+      'Minor Home Repairs',
+      'Moving Help',
+      'Organization',
+      'Accounting',
+      'Arts / Crafts',
+      'Automotive',
+      'Carpentry & Construction',
+      'Computer Help',
+      'Cooking / Baking',
+      'Data Entry',
+      'Decoration',
+      'Deep Clean',
+      'Electrician',
+      'Errands',
+      'Graphic Design',
+      'Laundry and Ironing',
+      'Marketing',
+      'Mounting',
+      'Office Administration',
+      'Packing & Shipping',
+      'Painting',
+      'Pet Sitting',
+      'Photography',
+      'Plumbing',
+      'Research',
+      'Selling Online',
+      'Sewing',
+      'Shopping',
+      'Usability Testing',
+      'Videography',
+      'Web Design & Development',
+      'Wait In Line',
+      'Window Cleaning',
+      'Writing & Editing',
+      'Yard Work & RemovalDeliver'
+    ]
   end
+
 end
+
+
+
+
+
