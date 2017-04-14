@@ -34,11 +34,9 @@
           <% @services.each do |service| %>
             <div class="col-xs-12 col-sm-6">
               <%= link_to service_path(service) do %>
-                  <%# if defined?service.photo %>
-                    <!-- <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= service.photo %>');"> -->
-                  <%# else %>
-                    <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://lorempixel.com/400/200/business');">
-                  <%# end %>
+
+                    <div class="card item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= picture_url(service) %>);">
+
 
 
                       <div class="category">
