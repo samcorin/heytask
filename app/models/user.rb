@@ -12,9 +12,9 @@ class User < ApplicationRecord
   has_many :gigs, through: :services, source: :bookings
 
   # Geocoding
-  geocoded_by :ip_address,
-    :latitude => :lat, :longitude => :lon
-  after_validation :geocode
+  # geocoded_by :ip_address,
+  #   :latitude => :lat, :longitude => :lon
+  # after_validation :geocode
 
 
 
