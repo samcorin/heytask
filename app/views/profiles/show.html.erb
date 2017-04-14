@@ -15,16 +15,12 @@
     
     <div class="col-md-6">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <p><strong>Email Address:</strong> <%= @user.email %><br/>
+          <strong>Username:</strong> <%= @user.username %></p>
       <div class="well profile-block profile-description">
         <h3>Bio</h3>
         <%= @user.bio %>
       </div>
-     
-        <div>
-          <h3>Information</h3>
-          <p>Email Address: <%= @user.email %><br/>
-          Username: <%= @user.username %></p>
-        </div>
     </div>
   </div>
 </div>
